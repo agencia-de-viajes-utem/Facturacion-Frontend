@@ -1,0 +1,52 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+
+import './ModalComponent.css';
+
+const ModalComponent = ({ title, show, handleClose, handleAccept, bodyContent, backdrop, closeButtonVariant, acceptButtonVariant, error }) => {
+    return (
+        <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop={backdrop}
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>{title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{bodyContent}</Modal.Body>
+            <Modal.Footer>
+                <Button variant={closeButtonVariant} onClick={handleClose}>
+                    Cerrar
+                </Button>
+                {!error && (
+                    <Button variant={acceptButtonVariant} onClick={handleAccept}>
+                        Aceptar
+                    </Button>
+                )}
+            </Modal.Footer>
+        </Modal>
+    );
+};
+
+ModalComponent.propTypes = {
+    title: PropTypes.string.isRequired,
+    show: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    handleAccept: PropTypes.func,
+    bodyContent: PropTypes.node.isRequired,
+    backdrop: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['static'])]),
+    closeButtonVariant: PropTypes.string,
+    acceptButtonVariant: PropTypes.string,
+    error: PropTypes.bool,
+};
+
+ModalComponent.defaultProps = {
+    backdrop: 'static',
+    closeButtonVariant: 'secondary',
+    acceptButtonVariant: 'primary',
+    error: false,
+};
+
+export default ModalComponent;

@@ -1,0 +1,59 @@
+.metodoPagoTitle {
+    width: 100%;
+}
+
+.metodos_selectTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.box .boxReady {
+    position: relative;
+}
+
+.metodoPagoTitle p {
+    padding-left: 1rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    user-select: none;
+    border-bottom: 1px solid var(--hr-color);
+}
+
+
+
+
+.method.not-selected {
+    opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+    .metodoPagoTitle p {
+        font-size: 1.2rem;
+        padding-right: 1rem;
+    }
+}
+
+.metodoPagoTitle {
+    position: relative;
+    /* Esto permite que los elementos absolutos hijos se posicionen en relación a este contenedor */
+    height: 20px;
+    /* Asegúrate de que este alto sea suficiente para tu texto */
+    /* Resto de tus estilos */
+}
+
+
+/* Puedes eliminar la visibilidad o display en base a la clase agregada a 'box' si es necesario */
+.boxReady .metodos_selectTitle {
+    display: none;
+    /* Esto ocultará "Seleccione un método de pago" cuando se haya seleccionado un método */
+}
+
+.box:not(.boxReady) .metodos_selected {
+    display: none;
+    /* Esto ocultará "Ha seleccionado X" cuando no se haya seleccionado un método */
+}

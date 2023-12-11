@@ -1,0 +1,24 @@
+.totalVueloTitulo {
+    background: linear-gradient(179.59deg, rgba(12, 85, 117, 0.74) 0.36%, #0F4156 99.63%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white; /* Cambiado a blanco */
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.serviciosAdicionales {
+    width: 100%;
+    height: 12rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow-y: auto;
+    color: white; /* Cambiado a blanco */
+}
+
+/* Estilos para el texto dentro de .serviciosAdicionales */
+.serviciosAdicionales .h5,
+.serviciosAdicionales .h6,
+.serviciosAdicionales .text-muted,
+.serviciosAdicionales .h5.selected {
+    color: white; /* Cambiado a blanco */
+}

@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: facturacion-front
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: kong
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec: 
+  rules:
+  - host: facturacion.tisw.cl 
+    http:
+      paths:
+      - backend:
+          service:
+            name: facturacion-front
+            port:
+              number: 80
+        pathType: Prefix
+        path: /
+  tls:
+  - hosts:
+    - facturacion.tisw.cl
+    secretName: facturacion-front-secret

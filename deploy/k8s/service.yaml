@@ -1,0 +1,13 @@
+#golang-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: facturacion-front
+spec:
+  selector:
+    app: facturacion-front
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5175
+  type: ClusterIP
